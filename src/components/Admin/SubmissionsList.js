@@ -15,7 +15,7 @@ const SubmissionsList = ({ onSelectSubmission, refresh  }) => {
   const fetchSubmissions = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3001/admin/submissions', {
+      const response = await fetch('https://oralvis-backend-sgsr.onrender.com/admin/submissions', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -40,7 +40,7 @@ const SubmissionsList = ({ onSelectSubmission, refresh  }) => {
       if (!submission.imageURLs || submission.imageURLs.length === 0) return;
       
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:3001/admin/get-image', {
+      const res = await fetch('https://oralvis-backend-sgsr.onrender.com/admin/get-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const SubmissionsList = ({ onSelectSubmission, refresh  }) => {
   const fetchImage = async (submission) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:3001/admin/get-image', {
+      const res = await fetch('https://oralvis-backend-sgsr.onrender.com/admin/get-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
