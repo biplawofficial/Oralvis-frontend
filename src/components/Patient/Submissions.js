@@ -20,7 +20,7 @@ const Submissions = () => {
         return;
       }
 
-      const response = await fetch('https://oralvis-backend-sgsr.onrender.com/patient/submissions', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/patient/submissions`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -44,7 +44,7 @@ const Submissions = () => {
   const downloadReport = async (submissionId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://oralvis-backend-sgsr.onrender.com/patient/submission/${submissionId}/report`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/patient/submission/${submissionId}/report`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

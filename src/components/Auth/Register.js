@@ -33,7 +33,7 @@ const Register = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await fetch('https://oralvis-backend-sgsr.onrender.com/auth/register', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

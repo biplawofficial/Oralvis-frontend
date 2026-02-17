@@ -51,7 +51,7 @@ const UploadForm = () => {
 
       const token = localStorage.getItem('token');
 
-      const response = await fetch('https://oralvis-backend-sgsr.onrender.com/patient/upload', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/patient/upload`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

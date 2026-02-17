@@ -245,7 +245,7 @@ const AnnotationTool = ({ submission, onBack, onSaveAnnotation }) => {
       prevImageUrlsRef.current = [];
 
       for (const imagePath of imagePaths) {
-        const res = await fetch('https://oralvis-backend-sgsr.onrender.com/admin/get-image', {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/get-image`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -288,7 +288,7 @@ const AnnotationTool = ({ submission, onBack, onSaveAnnotation }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `https://oralvis-backend-sgsr.onrender.com/admin/submission/${submission._id}/generate-report`,
+        `${process.env.REACT_APP_BACKEND_URL}/admin/submission/${submission._id}/generate-report`,
         {
           method: 'POST',
           headers: { Authorization: `Bearer ${token}` }
@@ -321,7 +321,7 @@ const AnnotationTool = ({ submission, onBack, onSaveAnnotation }) => {
       };
 
       const response = await fetch(
-        `https://oralvis-backend-sgsr.onrender.com/admin/submission/${submission._id}/annotate`,
+        `${process.env.REACT_APP_BACKEND_URL}/admin/submission/${submission._id}/annotate`,
         {
           method: 'POST',
           headers: { 
