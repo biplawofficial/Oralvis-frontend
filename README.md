@@ -61,3 +61,5 @@ _(Ensure Backend is running and seeded if necessary, or register new users)_
 
 - `npm start`: Runs the app in development mode.
 - `npm build`: Builds the app for production to the `build` folder.
+
+Frontend was 80% done by my friend as a shared project: https://github.com/amrutha-snair
